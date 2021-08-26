@@ -9,17 +9,27 @@ class GenerateHtml {
     this.loadHtmlComponents()
       .then((htmlComponents) => {
         this.teamMembers = teamMembers;
-        this.htmlComponents = htmlComponents;
-        console.log(this.htmlComponents);
+        [this.header, this.footer] = htmlComponents;
+        console.log("hello");
+        console.log(this.header);
+        console.log(this.footer);
         console.log(this.teamMembers);
-        console.log(this.teamName);
+        console.log("goodbye");
+        this.generatePage();
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
-  generatePage() {}
+  generatePage() {
+    // Generate the HTML page
+    const finalHtml = this.header + this.footer;
+    fs.writeFile("./dist/finalIndex.html", finalHtml, (err) => {
+      if (err) throw new Error(err);
+      console.log(`Generated finalIndex.html`);
+    });
+  }
 
   loadHtmlComponents = async () => {
     this.header = await readFileAsync("./static/html/index.html", "utf8").catch(
@@ -29,6 +39,7 @@ class GenerateHtml {
       "./static/html/footer.html",
       "utf8"
     ).catch((err) => console.error(err));
+    return [this.header, this.footer];
   };
 
   generateMemberCard = (member) => {
