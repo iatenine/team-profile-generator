@@ -19,7 +19,7 @@ CLI Application to dynamically generate a static webpage with cards containing i
 # Installation
 
 `git clone git@github.com:iatenine/team-profile-generator.git`  
-Once cloned, inside of the repo's root directory run:
+Once cloned, inside of the repo's root directory run:  
 `npm i`
 
 # Usage
