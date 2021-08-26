@@ -1,5 +1,5 @@
-const Manager = require("../src/Manager");
-const Employee = require("../src/Employee");
+const Manager = require("../lib/js/Manager");
+const Employee = require("../lib/js/Employee");
 
 const name = "Boss";
 const id = 20;

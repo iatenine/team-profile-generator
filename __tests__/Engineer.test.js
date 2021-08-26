@@ -1,5 +1,5 @@
-const Engineer = require("../src/Engineer");
-const Employee = require("../src/Employee");
+const Engineer = require("../lib/js/Engineer");
+const Employee = require("../lib/js/Employee");
 
 const name = "Quackles";
 const id = 400;

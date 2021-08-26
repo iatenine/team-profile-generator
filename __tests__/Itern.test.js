@@ -1,5 +1,5 @@
-const Intern = require("../src/Intern");
-const Employee = require("../src/Employee");
+const Intern = require("../lib/js/Intern");
+const Employee = require("../lib/js/Employee");
 
 const name = "Punk Kid";
 const id = -6;
