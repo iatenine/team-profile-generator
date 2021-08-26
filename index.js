@@ -62,6 +62,12 @@ function addMember(currentRole) {
       type: "string",
       message: `What is the ${roles[currentRole].role}'s ${roles[currentRole].special}?`,
       name: "special",
+      validate: (answer) => {
+        if (currentRole === 0 && isNaN(answer)) {
+          return "Office Number must be a number";
+        }
+        return true;
+      },
     },
     {
       type: "list",
