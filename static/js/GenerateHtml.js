@@ -48,6 +48,7 @@ class GenerateHtml {
         member["color"] = "bg-primary";
         member["special"] = `${member.github}`;
         member["specialLabel"] = "Github";
+        member["href"] = `<a href="https://github.com/`;
         break;
       case "Intern":
         member["color"] = "bg-danger";
@@ -69,9 +70,17 @@ class GenerateHtml {
       <ul class="list-group list-group-flush text-dark">
         <li class="list-group-item">ID: ${member.id}</li>
         <li class="list-group-item">
-            Email: <a href="mailto:${member.email}" target="no_blank">${member.email}</a>
+            Email: <a href="mailto:${member.email}" target="no_blank">${
+      member.email
+    }</a>
           </li>
-        <li class="list-group-item">${member.specialLabel} ${member.special}</li>
+        <li class="list-group-item">${member.specialLabel} ${
+      member.href
+        ? `${member.href + member.special}" target="no_blank">${
+            member.special
+          }</a>`
+        : `${member.special}`
+    }</li>
       </ul>
     </div>`;
   };
