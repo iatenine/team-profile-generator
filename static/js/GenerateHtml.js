@@ -10,11 +10,6 @@ class GenerateHtml {
       .then((htmlComponents) => {
         this.teamMembers = teamMembers;
         [this.header, this.footer] = htmlComponents;
-        console.log("hello");
-        console.log(this.header);
-        console.log(this.footer);
-        console.log(this.teamMembers);
-        console.log("goodbye");
         this.generatePage();
       })
       .catch((err) => {
@@ -23,8 +18,13 @@ class GenerateHtml {
   }
 
   generatePage() {
+    let bodyString = "";
+
+    for (const member of this.teamMembers) {
+      bodyString += this.generateMemberCard(member);
+    }
     // Generate the HTML page
-    const finalHtml = this.header + this.footer;
+    const finalHtml = this.header + bodyString + this.footer;
     fs.writeFile("./dist/finalIndex.html", finalHtml, (err) => {
       if (err) throw new Error(err);
       console.log(`Generated finalIndex.html`);
@@ -71,7 +71,7 @@ class GenerateHtml {
         <li class="list-group-item">
             Email: <a href="mailto:${member.email}" target="no_blank">${member.email}</a>
           </li>
-        <li class="list-group-item">${member.specialLabel} = ${member.special}</li>
+        <li class="list-group-item">${member.specialLabel} ${member.special}</li>
       </ul>
     </div>`;
   };
