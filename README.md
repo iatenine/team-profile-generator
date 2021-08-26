@@ -6,9 +6,10 @@
 
 [Description](#description)  
 [Installation](#installation)  
-[Usage](#usage)  
+[Usage](#usage)
+[Walkthrough](#walkthrough)
 [Contributing](#contributing)  
-[Tests](#tests)  
+[Tests](#tests)
 [Questions](#questions)  
 [License](#license)
 
@@ -37,6 +38,10 @@ Select DONE if complete, otherwise the other 2 options will add an employee of t
 Upon completion, a static webpage will be generated in the dist folder with a simple header and
 a gallery of cards displayed neatly representing each employee. Feel free to use or modify this page
 to your own needs
+
+# Walkthrough
+
+A walkthrough video can be viewed [here](https://drive.google.com/file/d/1cCIe7ZIijoHkhdgUe5LBS18HLTHXuDRn/view?usp=sharing)
 
 # Contributing
 
