@@ -36,17 +36,30 @@ function addMember(currentRole) {
       name: "name",
     },
     {
-      type: "input",
+      type: "number",
       message: `What is the ${roles[currentRole].role}'s Employee ID?`,
       name: "id",
+      validate: (value) => {
+        if (value < 0 || isNaN(value)) {
+          return `Employee ID must be a number`;
+        }
+        return true;
+      },
     },
     {
-      type: "input",
+      type: "string",
       message: `What is the ${roles[currentRole].role}'s email address?`,
       name: "email",
+      validate: (answer) => {
+        const pass = answer.match(/\S+@\S+\.\S+/);
+        if (pass) {
+          return true;
+        }
+        return "Enter a valid email address.";
+      },
     },
     {
-      type: "input",
+      type: "string",
       message: `What is the ${roles[currentRole].role}'s ${roles[currentRole].special}?`,
       name: "special",
     },
@@ -73,7 +86,6 @@ function addMember(currentRole) {
         addMember(2);
         break;
       default:
-        console.log(members);
         new GenerateHtml(members);
         break;
     }
