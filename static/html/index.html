@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>My Team</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            My Team
+        </h1>
+    </header>
+    <main class="container
+          d-flex">
+        <!-- Card flexbox container -->
+        <div class="row card-deck">
+
+            <div class="card m-4 text-light">
+                <div class="card-header bg-success">
+                    <h3>${data.name}</h3>
+                    <div class="d-flex flex-row">
+                        <p class="m-2">Manager</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush text-dark">
+                    <li class="list-group-item">ID: ${data.id}</li>
+                    <li class="list-group-item">
+                        Email: <a href="mailto:${data.email}" target="no_blank">${data.email}</a>
+                    </li>
+                    <li class="list-group-item">Office Number = ${data.officeNumber}</li>
+                </ul>
+            </div>
+
+            <div class="card m-4 text-light">
+                <div class="card-header bg-primary">
+                    <h3>${data.name}</h3>
+                    <div class="d-flex flex-row">
+                        <p class="m-2">Engineer</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush text-dark">
+                    <li class="list-group-item">ID: ${data.id}</li>
+                    <li class="list-group-item">
+                        Email: <a href="mailto:${data.email}" target="no_blank">${data.email}</a>
+                    </li>
+                    <li class="list-group-item">Github = ${data.officeNumber}</li>
+                </ul>
+            </div>
+
+            <div class="card m-4 text-light">
+                <div class="card-header bg-warning">
+                    <h3>${data.name}</h3>
+                    <div class="d-flex flex-row">
+                        <p class="m-2">Intern</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush text-dark">
+                    <li class="list-group-item">ID: ${data.id}</li>
+                    <li class="list-group-item">
+                        Email: <a href="mailto:${data.email}" target="no_blank">${data.email}</a>
+                    </li>
+                    <li class="list-group-item">School = ${data.officeNumber}</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

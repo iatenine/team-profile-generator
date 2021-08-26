@@ -1,6 +1,7 @@
-const Manager = require("./lib/js/Manager");
-const Intern = require("./lib/js/Intern");
-const Engineer = require("./lib/js/Engineer");
+const Manager = require("./static/js/Manager");
+const Intern = require("./static/js/Intern");
+const Engineer = require("./static/js/Engineer");
+const GenerateHtml = require("./static/js/GenerateHtml");
 const inquirer = require("inquirer");
 
 const roles = [
@@ -73,6 +74,7 @@ function addMember(currentRole) {
         break;
       default:
         console.log(members);
+        new GenerateHtml(members);
         break;
     }
   });

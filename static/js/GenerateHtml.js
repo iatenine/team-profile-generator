@@ -8,26 +8,31 @@ class GenerateHtml {
   constructor(teamMembers) {
     this.loadHtmlComponents()
       .then((htmlComponents) => {
-        this.teamName = teamName;
         this.teamMembers = teamMembers;
         this.htmlComponents = htmlComponents;
+        console.log(this.htmlComponents);
+        console.log(this.teamMembers);
+        console.log(this.teamName);
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
+  generatePage() {}
+
   loadHtmlComponents = async () => {
-    this.header = await readFileAsync("../html/index.html", "utf8").catch(
+    this.header = await readFileAsync("./static/html/index.html", "utf8").catch(
       (err) => console.error(err)
     );
-    this.footer = await readFileAsync("../html/footer.html", "utf8").catch(
-      (err) => console.error(err)
-    );
+    this.footer = await readFileAsync(
+      "./static/html/footer.html",
+      "utf8"
+    ).catch((err) => console.error(err));
   };
 
-  generateMemberCard = (member, role) => {
-    switch (role) {
+  generateMemberCard = (member) => {
+    switch (member.role) {
       case "Engineer":
         member["color"] = "bg-primary";
         member["special"] = `${member.github}`;

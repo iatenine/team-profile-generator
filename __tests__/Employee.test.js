@@ -1,4 +1,4 @@
-const Employee = require("../lib/js/Employee");
+const Employee = require("../static/js/Employee");
 
 describe("Employee", () => {
   it("should be initialized", () => {
